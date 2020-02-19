@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title> Books </title>
+</head>
+<body> 
+	<div>
+		<form>
+			<input type="text" name="title" id="title" placeholder="Title">
+			<input type="text" name="author" id="author" placeholder="Author">
+			<input type="number" name="quantity" id="quantity" placeholder="Quantity">
+			<input type="submit" name="submit" onclick="getvalues(event)">
+		</form>
+
+	</div>
+
+
+	<div>
+		<table id="table">
+		<tr>
+			<th> Title </th>
+			<th> Name </th>
+			<th> Quantity </th>
+		</tr> 
+		</table>
+	</div>
+
+<script type="text/javascript">
+
+	const table = document.getElementById("table");
+	function getvalues(eveform) {
+		eveform.preventDefault();
+		var x = document.getElementById("title").value;
+		var y = document.getElementById("author").value;
+		var z = document.getElementById("quantity").value;
+
+        let title  =  document.createElement("td"); title.innerHTML = x;
+        let author  =  document.createElement("td"); author.innerHTML = y;
+        let quantity  =  document.createElement("td"); 	quantity.innerHTML = z;
+
+        let row = document.createElement("tr");
+        row.appendChild(title);
+        row.appendChild(author);
+        row.appendChild(quantity);
+
+        table.appendChild(row)
+
+	}
+</script>
+
+</body>
+
+
+</html>
+
